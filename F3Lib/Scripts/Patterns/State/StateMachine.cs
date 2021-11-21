@@ -5,7 +5,7 @@ namespace F3Lib.Patterns.State
 {
     public class StateMachine<TTrigger, TState> where TState : IState
     {
-        private List<Transition<TTrigger, TState>> _transitions;
+        private readonly List<Transition<TTrigger, TState>> _transitions = new List<Transition<TTrigger, TState>>();
         private TState _currentState;
 
         public StateMachine(TState initState)

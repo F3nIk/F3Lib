@@ -1,15 +1,18 @@
 ﻿
 namespace F3Lib.Patterns.Singleton
 {
+
     public class SingletonObject<Type> where Type : SingletonObject<Type>
     {
-		private static SingletonObject<Type> _instance;
+        private static SingletonObject<Type> _instance;
 
-		public static SingletonObject<Type> Instance
+        public static SingletonObject<Type> Instance => _instance;
+
+        protected SingletonObject()
         {
-			get => _instance ?? new SingletonObject<Type>();
-        }
+            if (_instance != null) throw new System.InvalidOperationException();
 
-		protected SingletonObject() { }
-	}
+            _instance = this;
+        }
+    }
 }

@@ -6,8 +6,8 @@ namespace F3Lib.UI
     [DisallowMultipleComponent]
     public class FillerParticles : MonoBehaviour
     {
-        [SerializeField] private RectTransform _minPoint;
-        [SerializeField] private RectTransform _maxPoint;
+        [SerializeField] private RectTransform _minPoint = null;
+        [SerializeField] private RectTransform _maxPoint = null;
 
         private ParticleSystem _particles;
         private RectTransform _rect;

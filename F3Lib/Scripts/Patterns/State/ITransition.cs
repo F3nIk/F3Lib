@@ -1,8 +1,9 @@
 ﻿namespace F3Lib.Patterns.State
 {
-    public interface ITransition<ITrigger, TState> where TState : IState
+    public interface ITransition<TTrigger, TState> where TState : IState
     {
-        ITransition<ITrigger, TState> Bind(ITrigger command, TState state);
+        ITransition<TTrigger, TState> Bind(TTrigger command, TState state);
+        ITransition<TTrigger, TState> ToSelf(TTrigger command);
         TState GetState();
         TState GetTarget();
 

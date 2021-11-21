@@ -49,6 +49,8 @@ namespace F3Lib.UI
 
         private void OnEnable() => Requiares();
 
+        private void OnDisable() => StopAllCoroutines();
+
         private void Requiares()
         {
             if (_background == null || _filler == null) enabled = false;
